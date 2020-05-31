@@ -35,12 +35,12 @@ public class MessageSender {
                 new javax.mail.Authenticator(){
                     protected PasswordAuthentication getPasswordAuthentication() {
                         return new PasswordAuthentication(
-                                "anamitamb@gmail.com", "Zasinas1");// Specify the Username and the PassWord
+                                "****MYEMAIL*****", "********MYPASSWORD******");// Specify the Username and the PassWord
                     }
                 });
-        String to = "nacickasmantas@gmail.com";
-        String from = "anamitamb@gmail.com";
-        String subject = "PORTFOLIO MESSAGE!!!!!";
+        String to = "****MYEMAIL*****";
+        String from = "****MYEMAIL*****";
+        String subject = "PORTFOLIO MESSAGE";
         javax.mail.Message msg = new MimeMessage(session);
         try {
             msg.setFrom(new InternetAddress(from));
@@ -49,7 +49,7 @@ public class MessageSender {
             msg.setSubject(subject);
             msg.setText(sendedMessage.getSenderMessage() + "\n\nSENDED FROM - " + sendedMessage.getSenderName() + ", EMAIL - " + sendedMessage.getSenderEmail());
             Transport transport = session.getTransport("smtp");
-            transport.connect("smtp.gmail.com" , 465 , "anamitamb@gmail.com", "Zasinas1");
+            transport.connect("smtp.gmail.com" , 465 , "****MYEMAIL*****", "********MYPASSWORD******");
             transport.send(msg);
             System.out.println("fine!!");
         }

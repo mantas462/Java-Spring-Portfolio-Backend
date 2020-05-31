@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.*;
 @ComponentScan
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin("www.mantasnacickas.com")
 public class MessageController {
 
 
     @PostMapping("/sendmessage" )
     public Message sendMessage(@RequestBody Message message) {
 
-        System.out.println("EEEE");
         MessageSender messageSender=new MessageSender();
         messageSender.sendMessage(message);
 
